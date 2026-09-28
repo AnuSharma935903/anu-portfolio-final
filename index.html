@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rayhan Aditya — Web Designer & UI/UX Creator</title>
+  <meta name="description"
+    content="Portfolio of Rayhan Aditya, Web Designer and UI/UX Creator specializing in stylish, user-focused web experiences with smooth interactive animations.">
+
+  <!-- Google Fonts: Bebas Neue, Caveat, Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Caveat:wght@400;700&family=Outfit:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- Preloader Screen -->
+  <div id="loader" class="loader">
+    <div class="loader-content">
+      <div class="loader-spinner"></div>
+      <div class="loader-info">
+        <span class="loader-title">INITIALIZING EXPERIENCE</span>
+        <span id="loader-percent" class="loader-percent">0%</span>
+      </div>
+      <div class="loader-bar-bg">
+        <div id="loader-bar" class="loader-bar"></div>
+      </div>
+      <p class="loader-sub">Preparing 240 cinematic frames...</p>
+    </div>
+  </div>
+
+  <!-- Background Animated Canvas (Fixed Viewport, Layer 1) -->
+  <div class="canvas-viewport" aria-hidden="true">
+    <canvas id="hero-canvas"></canvas>
+    <div class="canvas-vignette"></div>
+    <div class="canvas-ambient-gradient"></div>
+  </div>
+
+  <!-- Giant Background Title behind face (Layer 2) -->
+  <div class="hero-bg-title-wrap" aria-hidden="true">
+    <div class="hero-bg-title">
+      <div class="hero-bg-side hero-bg-side-left">
+        <span class="hero-bg-word">WEB</span>
+      </div>
+      <div class="hero-bg-side hero-bg-side-right">
+        <span class="hero-bg-word">DESIGNER</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Foreground Subject Cutout Canvas (Layer 3) -->
+  <div class="canvas-fg-viewport" aria-hidden="true">
+    <canvas id="fg-canvas"></canvas>
+  </div>
+
+  <!-- HUD Status (Bottom Right) -->
+  <div class="hud-status" aria-label="Animation Frame Counter">
+    <div class="hud-counter">
+      <span class="hud-label">FRAME</span>
+      <span id="frame-num">001</span>
+      <span class="hud-slash">/</span>
+      <span class="hud-total">240</span>
+    </div>
+    <div class="hud-progress-line">
+      <div id="hud-progress-fill" class="hud-progress-fill"></div>
+    </div>
+  </div>
+
+  <!-- Main Scrollable Content Overlay (Layer 4) -->
+  <div class="page-container">
+
+    <!-- Top Navigation Header -->
+    <header class="top-nav">
+      <div class="nav-left">
+        <span class="nav-role">WEB DESIGNER</span>
+        <span class="nav-role-sub">DIGITAL CREATOR</span>
+      </div>
+      <div class="nav-right">
+        <a href="#contact" class="freelance-badge">
+          AVAILABLE FOR FREELANCE
+          <svg class="sparkle-icon" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2L14.8 9.2L22 12L14.8 14.8L12 22L9.2 14.8L2 12L9.2 9.2L12 2Z" />
+          </svg>
+        </a>
+      </div>
+    </header>
+
+    <!-- SECTION 1: HERO SECTION -->
+    <section class="hero-section" id="hero">
+      <div class="hero-grid">
+        <!-- Left Column: Introduction & Bio -->
+        <div class="hero-left">
+          <p class="hero-greeting">Hello, I'm</p>
+          <div class="hero-name-wrap">
+            <h2 class="hero-name">ANU<br>SHARMA</h2>
+          </div>
+          <div class="hero-titles">
+            <span class="title-accent">WEB DESIGNER &</span>
+            <span class="title-accent">UI/UX CREATOR</span>
+          </div>
+          <p class="hero-bio">
+            I design and build stylish, user-focused web experiences that combine creativity with strategy. Passionate
+            about clean design, smooth interactions, and details that make a difference.
+          </p>
+          <div class="hero-badge">
+            <svg class="globe-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="2" y1="12" x2="22" y2="12"></line>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
+              </path>
+            </svg>
+            <span>AVAILABLE WORLDWIDE</span>
+          </div>
+        </div>
+
+        <!-- Center Space: Frame sequence of Rayhan is visible here -->
+        <div class="hero-center-spacer"></div>
+
+        <!-- Right Column: Tagline & Stats -->
+        <div class="hero-right">
+          <div class="hero-quote-tag">
+            <svg class="sparkle-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2L14.8 9.2L22 12L14.8 14.8L12 22L9.2 14.8L2 12L9.2 9.2L12 2Z" />
+            </svg>
+            <p>Turning ideas into powerful digital experiences.</p>
+          </div>
+
+          <div class="hero-stats">
+            <div class="stat-item">
+              <div class="stat-number">1+</div>
+              <div class="stat-label">YEARS<br>EXPERIENCE</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">40+</div>
+              <div class="stat-label">PROJECTS<br>COMPLETED</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">20+</div>
+              <div class="stat-label">HAPPY<br>CLIENTS</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scroll Prompt -->
+      <div id="scroll-prompt" class="scroll-prompt">
+        <div class="mouse-icon">
+          <div class="wheel"></div>
+        </div>
+        <span class="prompt-text">SCROLL TO EXPLORE</span>
+      </div>
+    </section>
+
+    <!-- SECTION 2: SELECTED PROJECTS -->
+    <section class="section projects-section" id="projects">
+      <div class="section-header">
+        <h2 class="section-title">SELECTED PROJECTS</h2>
+        <a href="#projects" class="section-link">
+          VIEW ALL PROJECTS
+          <svg class="arrow-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
+      </div>
+
+      <div class="projects-grid">
+        <!-- Project 1: Veloce Bikes -->
+        <article class="project-card">
+          <div class="project-image-box">
+            <img src="assets/project_veloce.jpg" alt="Veloce Bikes E-Commerce Website preview" loading="lazy">
+            <div class="project-overlay"></div>
+          </div>
+          <div class="project-meta">
+            <span class="project-num">01</span>
+            <div class="project-info">
+              <h3 class="project-name">VELOCE BIKES</h3>
+              <span class="project-category">E-COMMERCE WEBSITE</span>
+            </div>
+            <a href="#projects" class="project-arrow-btn" aria-label="View Veloce Bikes project">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- Project 2: Woodcraft -->
+        <article class="project-card">
+          <div class="project-image-box">
+            <img src="assets/project_woodcraft.jpg" alt="Woodcraft Furniture Website preview" loading="lazy">
+            <div class="project-overlay"></div>
+          </div>
+          <div class="project-meta">
+            <span class="project-num">02</span>
+            <div class="project-info">
+              <h3 class="project-name">WOODCRAFT</h3>
+              <span class="project-category">FURNITURE WEBSITE</span>
+            </div>
+            <a href="#projects" class="project-arrow-btn" aria-label="View Woodcraft project">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- Project 3: Urbanic -->
+        <article class="project-card">
+          <div class="project-image-box">
+            <img src="assets/project_urbanic.jpg" alt="Urbanic Fashion Magazine preview" loading="lazy">
+            <div class="project-overlay"></div>
+          </div>
+          <div class="project-meta">
+            <span class="project-num">03</span>
+            <div class="project-info">
+              <h3 class="project-name">URBANIC</h3>
+              <span class="project-category">FASHION MAGAZINE</span>
+            </div>
+            <a href="#projects" class="project-arrow-btn" aria-label="View Urbanic project">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- SECTION 3: EDUCATION & SKILLS | WORK PROCESS | QUOTE -->
+    <section class="section about-process-section" id="process">
+      <div class="three-col-grid">
+
+        <!-- Column 1: Education & Skills -->
+        <div class="col-box education-skills-col">
+          <h2 class="col-title">EDUCATION & SKILLS</h2>
+
+          <div class="col-group">
+            <h3 class="group-subtitle">EDUCATION</h3>
+
+            <div class="edu-item">
+              <div class="edu-header">
+                <h4 class="edu-degree">First Year Computer Science & Engineering (Data Science) Student</h4>
+                <span class="edu-year">2026 - Present</span>
+              </div>
+              <p class="edu-school">Lokhmanya Tilak College of Engineering(LTCE),Navi Mumbai</p>
+            </div>
+
+            <div class="edu-item">
+              <div class="edu-header">
+                <h4 class="edu-degree">Web Design & Development Certification</h4>
+                <span class="edu-year">2025</span>
+              </div>
+              <p class="edu-school">Disha Institute,Roha</p>
+            </div>
+          </div>
+
+          <div class="col-group skills-group">
+            <h3 class="group-subtitle">SKILLS</h3>
+            <div class="skills-wrap">
+              <span class="skill-tag">WEB DESIGN</span>
+              <span class="skill-tag">UI/UX DESIGN</span>
+              <span class="skill-tag">FIGMA</span>
+              <span class="skill-tag">FRAMER</span>
+              <span class="skill-tag">HTML / CSS</span>
+              <span class="skill-tag">JAVASCRIPT</span>
+              <span class="skill-tag">C and C++</span>
+              <span class="skill-tag">PYTHON</span>
+              <span class="skill-tag">DATA ANALYSIS (BASIC)</span>
+              <span class="skill-tag">VIDEO EDITOR</span>
+              <span class="skill-tag">PHOTOSHOP</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Column 2: Work Process -->
+        <div class="col-box work-process-col">
+          <h2 class="col-title">WORK PROCESS</h2>
+
+          <div class="process-timeline">
+            <!-- Step 01 -->
+            <div class="process-item">
+              <span class="process-num">01</span>
+              <div class="process-icon-wrap">
+                <svg class="process-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+              </div>
+              <div class="process-content">
+                <h4 class="process-heading">DISCOVER</h4>
+                <p class="process-desc">Understanding goals, audience, and project requirements.</p>
+              </div>
+            </div>
+
+            <!-- Step 02 -->
+            <div class="process-item">
+              <span class="process-num">02</span>
+              <div class="process-icon-wrap">
+                <svg class="process-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M9 18h6"></path>
+                  <path d="M10 22h4"></path>
+                  <path d="M12 2a7 7 0 0 0-7 7c0 2.5 1.3 4.7 3.3 6h7.4c2-1.3 3.3-3.5 3.3-6a7 7 0 0 0-7-7z"></path>
+                </svg>
+              </div>
+              <div class="process-content">
+                <h4 class="process-heading">IDEATE</h4>
+                <p class="process-desc">Planning, wireframing, and creating the right concept.</p>
+              </div>
+            </div>
+
+            <!-- Step 03 -->
+            <div class="process-item">
+              <span class="process-num">03</span>
+              <div class="process-icon-wrap">
+                <svg class="process-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 20h9"></path>
+                  <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
+                </svg>
+              </div>
+              <div class="process-content">
+                <h4 class="process-heading">DESIGN</h4>
+                <p class="process-desc">Crafting visual design with a focus on user experience.</p>
+              </div>
+            </div>
+
+            <!-- Step 04 -->
+            <div class="process-item">
+              <span class="process-num">04</span>
+              <div class="process-icon-wrap">
+                <svg class="process-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="16 18 22 12 16 6"></polyline>
+                  <polyline points="8 6 2 12 8 18"></polyline>
+                </svg>
+              </div>
+              <div class="process-content">
+                <h4 class="process-heading">DEVELOP</h4>
+                <p class="process-desc">Building fast, responsive, and high-performing websites.</p>
+              </div>
+            </div>
+
+            <!-- Step 05 -->
+            <div class="process-item">
+              <span class="process-num">05</span>
+              <div class="process-icon-wrap">
+                <svg class="process-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="22" y1="2" x2="11" y2="13"></line>
+                  <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                </svg>
+              </div>
+              <div class="process-content">
+                <h4 class="process-heading">DELIVER</h4>
+                <p class="process-desc">Testing, optimizing, and launching with perfection.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Column 3: Crimson Quote Callout Box -->
+        <div class="quote-callout-card">
+          <div class="quote-mark" aria-hidden="true">“</div>
+          <blockquote class="quote-text">
+            Good design is not just how it looks, but how it works.
+          </blockquote>
+          <div class="signature">Anu Sharma</div>
+
+          <div class="quote-footer">
+            <div class="quote-cta-text">
+              LET'S CREATE<br>
+              SOMETHING GREAT<br>
+              TOGETHER.
+            </div>
+            <svg class="quote-sparkle" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2L14.8 9.2L22 12L14.8 14.8L12 22L9.2 14.8L2 12L9.2 9.2L12 2Z" />
+            </svg>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 4: LET'S WORK TOGETHER (FOOTER / CONTACT) -->
+    <footer class="section contact-section" id="contact">
+      <div class="contact-grid">
+
+        <!-- Left: Headline, CTA & Links -->
+        <div class="contact-info-col">
+          <div class="contact-header">
+            <h2 class="contact-title">LET'S WORK<br>TOGETHER</h2>
+            <svg class="sparkle-icon-lg" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2L14.8 9.2L22 12L14.8 14.8L12 22L9.2 14.8L2 12L9.2 9.2L12 2Z" />
+            </svg>
+          </div>
+
+          <p class="contact-intro">
+            I'm currently open for new projects and collaborations. Let's create something amazing that drives results.
+          </p>
+
+          <a href="mailto:hello@rayhanaditya.com" class="contact-cta-btn">
+            <span class="cta-arrow-circle">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </span>
+            <span class="cta-text">AVAILABLE FOR FREELANCE</span>
+          </a>
+
+          <!-- Contact items with clean icons -->
+          <div class="contact-details-list">
+            <a href="mailto:hello@rayhanaditya.com" class="contact-item">
+              <div class="contact-icon-box">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+              </div>
+              <span class="contact-item-text">anuanu935903@gmail.com</span>
+            </a>
+
+            <a href="https://www.rayhanaditya.com" target="_blank" rel="noopener" class="contact-item">
+              <div class="contact-icon-box">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="2" y1="12" x2="22" y2="12"></line>
+                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
+                  </path>
+                </svg>
+              </div>
+              <span class="contact-item-text">www.anusharma.com</span>
+            </a>
+
+            <a href="tel:+6281234567890" class="contact-item">
+              <div class="contact-icon-box">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path
+                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                  </path>
+                </svg>
+              </div>
+              <span class="contact-item-text">+91 935 903 7034</span>
+            </a>
+
+            <div class="contact-item">
+              <div class="contact-icon-box">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+              </div>
+              <span class="contact-item-text">Khoparkhairane, Navi Mumbai</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Realistic Studio Workstation / Laptop Mockup -->
+        <div class="contact-mockup-col">
+          <div class="mockup-frame">
+            <img src="assets/laptop_mockup.jpg" alt="Rayhan Aditya Workstation and Portfolio Setup" loading="lazy">
+            <div class="mockup-reflection"></div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="copyright-bar">
+        <span>&copy; 2026 Rayhan Aditya. All Rights Reserved.</span>
+        <span>Crafted with Precision & Seamless Animation</span>
+      </div>
+    </footer>
+
+  </div>
+
+  <script src="main.js"></script>
+</body>
+
+</html>
